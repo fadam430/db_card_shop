@@ -136,7 +136,7 @@ body {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: var(--db-orange);
+    
     border-radius: 50%;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -144,7 +144,7 @@ body {
 }
 
 .nav-icon:hover {
-    background-color: var(--db-red);
+    
     transform: scale(1.1) rotate(5deg);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
