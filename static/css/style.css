@@ -315,7 +315,7 @@ body {
 
 .card-img-top {
     height: 450px;
-    object-fit: cover;
+    
 }
 
 .card-body {
@@ -465,14 +465,14 @@ a:hover {
 /* ===== Card Image Responsive Heights ===== */
 .card-img-responsive {
     height: 400px;
-    object-fit: cover;
+    
 }
 
 /* Tablet and Desktop - 450px */
 @media (min-width: 768px) {
     .card-img-responsive {
         height: 450px;
-        object-fit: cover;
+        
     }
 }
 
