@@ -24,6 +24,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', include('home.urls')),
     path('cards/', include('cards.urls')),
+    path('cart/', include('bag.urls')),
 ]
 
 # Serve media files in development
