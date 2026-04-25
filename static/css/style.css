@@ -314,7 +314,7 @@ body {
 }
 
 .card-img-top {
-    height: 320px;
+    height: 400px;
     object-fit: cover;
 }
 
@@ -459,6 +459,17 @@ a:hover {
     .icon-img {
         width: 18px;
         height: 18px;
+    }
+}
+
+/* ===== Card Image Responsive Heights ===== */
+
+
+/* Tablet and Desktop - 450px */
+@media (min-width: 768px) {
+    .card-img-responsive {
+        height: 450px;
+        object-fit: cover;
     }
 }
 
