@@ -4,6 +4,12 @@
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
 {% endblock %}
+{% block extra_js %}
+    <script src="{% static 'checkout/JS/checkout.js' %}"></script>
+{% endblock %}
+
+{% block title %}Checkout{% endblock %}
+
 
 {% block content %}
 
@@ -34,20 +40,65 @@
         </div>
         <div class="col-md-6">
             <h2 class="h4 mb-3">Billing Details</h2>
-            <form method="post" action="{% url 'checkout' %}" id ="checkout-form">
+            <form method="POST" action="{% url 'checkout' %}" id ="checkout-form">
                 {% csrf_token %}
-                {{ order_form.full_name | as_crispy_field }}
-                {{ order_form.email | as_crispy_field }}
-                {{ order_form.phone_number | as_crispy_field }}
-                {{ order_form.street_address1 | as_crispy_field }}
-                {{ order_form.street_address2 | as_crispy_field }}
-                {{ order_form.town_or_city | as_crispy_field }}
-                {{ order_form.county | as_crispy_field }}
-                {{ order_form.postcode | as_crispy_field }}
-                {{ order_form.country | as_crispy_field }}
-                <button class="btn btn-db-primary btn-lg btn-block" type="submit">
-                    <i class="fas fa-credit-card"></i> Place Order
-                </button>
+                <fieldset class="mb-3">
+                    <legend class="rounded px-3 mb-3">Details</legend>
+                        {{ order_form.full_name | as_crispy_field }}
+                        {{ order_form.email | as_crispy_field }}
+                </fieldset>
+                <fieldset class="mb-3">
+                    <legend class="rounded px-3 mb-3">Delivery</legend>
+                        {{ order_form.phone_number | as_crispy_field }}
+                        {{ order_form.country | as_crispy_field }}
+                        {{ order_form.postcode | as_crispy_field }}
+                        {{ order_form.town_or_city | as_crispy_field }}
+                        {{ order_form.street_address1 | as_crispy_field }}
+                        {{ order_form.street_address2 | as_crispy_field }}
+                        {{ order_form.county | as_crispy_field }}
+                        <div class="form-check form-check-inline">
+                            {% if user.is_authenticated %}
+                                {{ order_form.save_info }}
+                                <label class="form-check-label" for="id_save_info">
+                                    Save this information for future purchases
+                                </label>
+                            {% else %}
+                                <label class="form-check-label" for="id-save-info">
+                                    <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
+                                    <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
+                                </label>
+                            {% endif %}
+                        </div>
+                </fieldset>
+                <fieldset class="mb-3">
+                    <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+                    <div id="card-element" class="mb-3">
+                        <!-- Stripe.js will inject the Card Element here -->
+                    </div>
+                    <div id="card-errors" role="alert" class="text-danger mb-3">
+                        <!-- Display card errors here -->
+                    </div>
+                <div class="submit-button text-right mt-5 mb-2">                    
+						<a href="{% url 'view_bag' %}" class="btn btn-outline-black rounded-0">
+							<span class="icon">
+								<i class="fas fa-chevron-left"></i>
+							</span>
+							<span class="font-weight-bold">Adjust Bag</span>
+						</a>
+						<button id="submit-button" class="btn btn-black rounded-0">
+							<span class="font-weight-bold">Complete Order</span>
+							<span class="icon">
+								<i class="fas fa-lock"></i>
+							</span>
+						</button>
+						<p class="small text-danger my-0">
+							<span class="icon">
+								<i class="fas fa-exclamation-circle"></i>
+							</span>
+							<span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+						</p>
+					</div>
+                </fieldset>
             </form>
         </div>
     </div>

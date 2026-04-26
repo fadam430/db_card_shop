@@ -51,7 +51,7 @@
                                             <button type="submit" class="btn btn-sm btn-primary">Update</button>
                                         </form>
                                     </td>
-                                    <td class="text-db-primary"><strong>${{ item.get_subtotal }}</strong></td>
+                                    <td class="text-db-primary"><strong>£{{ item.get_subtotal }}</strong></td>
                                     <td>
                                         <a href="{% url 'remove_from_bag' item.id %}" class="btn btn-sm btn-danger">
                                             <i class="fas fa-trash"></i> Delete
@@ -82,41 +82,29 @@
                         <hr>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Subtotal:</span>
-                            <strong>${{ bag.get_total }}</strong>
+                            <strong>£{{ bag.get_total }}</strong>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Shipping:</span>
-                            <strong>$0.00</strong>
+                            <strong>£0.00</strong>
                         </div>
                         <div class="d-flex justify-content-between mb-3">
-                            <span>Tax:</span>
-                            <strong>$0.00</strong>
+                            <span>Total Items:</span>
+                            <strong>{{ bag.items.count }}</strong>
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between mb-3">
                             <span class="h6">Total:</span>
-                            <strong class="h6 text-db-primary">${{ bag.get_total }}</strong>
+                            <strong class="h6 text-db-primary">£{{ bag.get_total }}</strong>
                         </div>
-                        <button id="proceed-to-checkout" class="btn btn-db-primary btn-lg w-100">
+                        <button id="proceed-to-checkout" class="btn btn-db-primary btn-lg w-100" 
+                                >
                             <i class="fas fa-credit-card"></i> Proceed to Checkout
                         </button>
                     </div>
                 </div>
 
-                <div class="card mt-3">
-                    <div class="card-body">
-                        <h6 class="card-title">Order Info</h6>
-                        <p class="small text-muted">
-                            <i class="fas fa-box"></i> Total Items: <strong>{{ bag.get_total_items }}</strong>
-                        </p>
-                        <p class="small text-muted">
-                            <i class="fas fa-check-circle text-success"></i> Authentic Cards
-                        </p>
-                        <p class="small text-muted">
-                            <i class="fas fa-truck text-info"></i> Fast Shipping Available
-                        </p>
-                    </div>
-                </div>
+                
             </div>
         </div>
     {% else %}
