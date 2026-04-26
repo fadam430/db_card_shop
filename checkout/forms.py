@@ -4,17 +4,19 @@ from .models import Order
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ['full_name', 'email', 'address_line1', 'address_line2', 'city', 'postal_code', 'country']
+        fields = ['full_name', 'email', 'phone_number', 'address_line1', 'address_line2', 'city', 'county', 'postcode', 'country']
         
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         placeholder_texts = {
             'full_name': 'Full Name',
             'email': 'Email Address',
+            'phone_number': 'Phone Number',
             'address_line1': 'Street Address 1',
             'address_line2': 'Street Address 2 (optional)',
             'city': 'City',
-            'postal_code': 'Postal Code',
+            'county': 'County (optional)',
+            'postcode': 'Postal Code',
             'country': 'Country',
         }
         self.fields['full_name'].widget.attrs['auto-focus'] = True

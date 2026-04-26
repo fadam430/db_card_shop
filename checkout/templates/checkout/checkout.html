@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+    <h1 class="mb-4 text-db-primary">Checkout</h1>
+    <p class="lead mb-5">Please review your order and enter your details to complete the purchase.</p>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="h4 mb-3">Your Order</h2>
+            <ul class="list-group mb-3">
+                {% for item in bag_items %}
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div>
+                        <h6 class="my-0">{{ item.card.name }}</h6>
+                        <small class="text-muted">Quantity: {{ item.quantity }}</small>
+                    </div>
+
+                    <span class="text-muted">£{{ item.total_price }}</span>
+                </li>
+                {% endfor %}
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Total (GBP)</span>
+                    <strong>£{{ bag_total }}</strong>   
+
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h2 class="h4 mb-3">Billing Details</h2>
+            <form method="post" action="{% url 'checkout' %}" id ="checkout-form">
+                {% csrf_token %}
+                {{ order_form.full_name | as_crispy_field }}
+                {{ order_form.email | as_crispy_field }}
+                {{ order_form.phone_number | as_crispy_field }}
+                {{ order_form.street_address1 | as_crispy_field }}
+                {{ order_form.street_address2 | as_crispy_field }}
+                {{ order_form.town_or_city | as_crispy_field }}
+                {{ order_form.county | as_crispy_field }}
+                {{ order_form.postcode | as_crispy_field }}
+                {{ order_form.country | as_crispy_field }}
+                <button class="btn btn-db-primary btn-lg btn-block" type="submit">
+                    <i class="fas fa-credit-card"></i> Place Order
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

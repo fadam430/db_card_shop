@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'cards',
     'bag',
     'checkout',
+    
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -55,10 +57,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "allauth.account.middleware.AccountMiddleware",
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'db_cardshop.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+
 
 TEMPLATES = [
     {
@@ -74,6 +80,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+            ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
             ],
         },
     },
