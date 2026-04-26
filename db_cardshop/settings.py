@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'checkout',
     
     'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -64,7 +65,8 @@ ROOT_URLCONF = 'db_cardshop.urls'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
-
+CRISPY_TEMPLATE_PACK = 'bootstrap5'  
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"  
 
 TEMPLATES = [
     {

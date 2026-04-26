@@ -9,7 +9,7 @@ from bag.models import Bag, BagItem
 # Create your models here
 
 class Order(models.Model):
-    
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders')
     order_number = models.CharField(max_length=20, null=False, editable=False)
     full_name = models.CharField(max_length=100, blank=False, null=False)
     email = models.EmailField(max_length=254, blank=False, null=False)

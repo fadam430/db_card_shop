@@ -28,7 +28,7 @@
                         <small class="text-muted">Quantity: {{ item.quantity }}</small>
                     </div>
 
-                    <span class="text-muted">£{{ item.total_price }}</span>
+                    <span class="text-muted">£{{ item.get_subtotal }}</span>
                 </li>
                 {% endfor %}
                 <li class="list-group-item d-flex justify-content-between">
@@ -52,23 +52,11 @@
                         {{ order_form.phone_number | as_crispy_field }}
                         {{ order_form.country | as_crispy_field }}
                         {{ order_form.postcode | as_crispy_field }}
-                        {{ order_form.town_or_city | as_crispy_field }}
-                        {{ order_form.street_address1 | as_crispy_field }}
-                        {{ order_form.street_address2 | as_crispy_field }}
+                        {{ order_form.city | as_crispy_field }}
+                        {{ order_form.address_line1 | as_crispy_field }}
+                        {{ order_form.address_line2 | as_crispy_field }}
                         {{ order_form.county | as_crispy_field }}
-                        <div class="form-check form-check-inline">
-                            {% if user.is_authenticated %}
-                                {{ order_form.save_info }}
-                                <label class="form-check-label" for="id_save_info">
-                                    Save this information for future purchases
-                                </label>
-                            {% else %}
-                                <label class="form-check-label" for="id-save-info">
-                                    <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
-                                    <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
-                                </label>
-                            {% endif %}
-                        </div>
+            
                 </fieldset>
                 <fieldset class="mb-3">
                     <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
@@ -79,7 +67,7 @@
                         <!-- Display card errors here -->
                     </div>
                 <div class="submit-button text-right mt-5 mb-2">                    
-						<a href="{% url 'view_bag' %}" class="btn btn-outline-black rounded-0">
+						<a href="{% url 'bag_view' %}" class="btn btn-outline-black rounded-0">
 							<span class="icon">
 								<i class="fas fa-chevron-left"></i>
 							</span>
@@ -95,7 +83,7 @@
 							<span class="icon">
 								<i class="fas fa-exclamation-circle"></i>
 							</span>
-							<span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+							<span>Your card will be charged <strong>£{{ bag_total|floatformat:2 }}</strong></span>
 						</p>
 					</div>
                 </fieldset>
