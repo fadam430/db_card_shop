@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
-from django.conf import settings
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -11,6 +10,5 @@ def index(request):
 
 
 def favicon(request):
-    """Redirect favicon requests to S3"""
-    favicon_url = f"{settings.STATIC_URL}img/db_logo.png"
-    return HttpResponseRedirect(favicon_url)
+    """Handle favicon request - return 204 No Content"""
+    return HttpResponse(status=204)
