@@ -1,0 +1,135 @@
+
+    /* Hero */
+    .about-hero {
+        background: linear-gradient(135deg, rgba(0,78,137,0.92) 0%, rgba(255,107,53,0.92) 100%);
+        padding: 70px 0 60px;
+        margin-bottom: 10px;
+    }
+    .about-hero-title {
+        font-family: 'Bangers', cursive;
+        font-size: 3rem;
+        letter-spacing: 3px;
+        color: #FFD700;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+        margin-bottom: 12px;
+    }
+    .about-hero-sub {
+        font-size: 1.1rem;
+        color: rgba(255,255,255,0.88);
+        margin: 0;
+    }
+
+    /* About card (text blocks) */
+    .about-card {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-left: 5px solid #FF6B35;
+        border-radius: 8px;
+        padding: 28px 32px;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    }
+    .about-card p {
+        color: #444;
+        line-height: 1.85;
+        margin-bottom: 1rem;
+        font-size: 0.97rem;
+    }
+    .about-card p:last-child { margin-bottom: 0; }
+
+    /* History label */
+    .history-label {
+        font-family: 'Bangers', cursive;
+        font-size: 1.25rem;
+        letter-spacing: 1px;
+        color: #004E89;
+        margin-bottom: 14px;
+        border-bottom: 2px solid #FFD700;
+        padding-bottom: 6px;
+    }
+
+    /* Step cards */
+    .step-card {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 28px 22px 22px;
+        text-align: center;
+        height: 100%;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+    }
+    .step-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+    }
+    .step-number {
+        position: absolute;
+        top: -16px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #FF6B35;
+        color: #fff;
+        font-family: 'Bangers', cursive;
+        font-size: 1.1rem;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(255,107,53,0.4);
+        letter-spacing: 0;
+    }
+    .step-icon {
+        font-size: 2rem;
+        color: #004E89;
+        margin: 10px 0 14px;
+    }
+    .step-card h5 {
+        font-family: 'Bangers', cursive;
+        font-size: 1.15rem;
+        letter-spacing: 1px;
+        color: #004E89;
+        margin-bottom: 10px;
+    }
+    .step-card p {
+        color: #555;
+        font-size: 0.88rem;
+        line-height: 1.7;
+        margin: 0;
+    }
+    .step-card code {
+        background: #f0eeff;
+        color: #004E89;
+        padding: 1px 5px;
+        border-radius: 3px;
+        font-size: 0.82rem;
+    }
+
+    /* Section title override */
+    .section-title {
+        font-family: 'Bangers', cursive;
+        font-size: 2.2rem;
+        color: #004E89;
+        text-align: center;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 70px;
+        height: 4px;
+        background: #FF6B35;
+        margin: 10px auto 30px;
+        border-radius: 2px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .about-hero-title { font-size: 2rem; }
+        .about-card { padding: 20px; }
+        .step-card { margin-top: 20px; }
+    }
+

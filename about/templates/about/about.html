@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About - Dragon Ball Card Shop{% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+{% endblock %}
+{% block content %}
+
+<!-- Hero Banner -->
+<div class="about-hero">
+    <div class="container text-center">
+        <h1 class="about-hero-title">About Dragon Ball Card Shop</h1>
+        <p class="about-hero-sub">A fan-built training project celebrating the legacy of Dragon Ball</p>
+    </div>
+</div>
+
+<div class="container py-5">
+
+    <!-- ── About This Website ─────────────────────────────────────── -->
+    <section class="mb-5">
+        <h2 class="section-title">About This Website</h2>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="about-card">
+                    <p>
+                        Dragon Ball Card Shop is a <strong>training project</strong> built with Django and Bootstrap as part of a
+                        full-stack web development journey. The goal of this project is to practise building a fully functional
+                        e-commerce application — covering everything from database design and user authentication to payment
+                        processing with Stripe. It is not a real commercial store, but every feature has been built to production
+                        standards, including a shopping bag, a checkout flow, and order management.
+                    </p>
+                    <p>
+                        The project was chosen around the Dragon Ball trading card universe because it offers a rich catalogue
+                        of products — cards spanning multiple series, rarities, characters, and conditions — making it an ideal
+                        dataset for practising filtering, categorisation, and product detail pages. It also gave the project a
+                        fun, themed identity that made the development process more enjoyable and the UI more interesting to design.
+                    </p>
+                    <p>
+                        All card images, names, and related intellectual property belong to their respective owners, including
+                        Akira Toriyama, Toei Animation, Bandai, and Funimation. This site is strictly non-commercial and is used
+                        purely for educational and portfolio purposes. If you are a developer or student interested in how the
+                        project was built, feel free to explore the GitHub repository linked in the footer.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── How to Use This Site ───────────────────────────────────── -->
+    <section class="mb-5">
+        <h2 class="section-title">How to Use This Site</h2>
+        <p class="text-center text-muted mb-4">Follow these simple steps to browse and order your favourite Dragon Ball cards.</p>
+
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-md-4">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon"><i class="fas fa-user-plus"></i></div>
+                    <h5>Create an Account</h5>
+                    <p>Click the register icon in the top navigation bar. Fill in your username, email address, and password to create your account. Existing users can simply log in with their credentials.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon"><i class="fas fa-search"></i></div>
+                    <h5>Browse the Cards</h5>
+                    <p>Head to the <strong>Cards</strong> page from the navigation menu. Use the category filters to explore cards by series, rarity, or character. Click any card to view its full details, description, and price.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon"><i class="fas fa-bag-shopping"></i></div>
+                    <h5>Add to Your Bag</h5>
+                    <p>On the card detail page, select your desired quantity and click <strong>Add to Bag</strong>. You can continue browsing and add as many cards as you like. Your bag is saved as long as you are logged in.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon"><i class="fas fa-shopping-bag"></i></div>
+                    <h5>Review Your Bag</h5>
+                    <p>Click the bag icon in the navigation bar to view your shopping bag. Here you can update quantities, remove items, or clear the bag entirely before proceeding. The order summary shows your running total.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <div class="step-icon"><i class="fas fa-credit-card"></i></div>
+                    <h5>Checkout &amp; Pay</h5>
+                    <p>Click <strong>Proceed to Checkout</strong> and fill in your delivery details. Payment is processed securely through <strong>Stripe</strong>. For testing, use the card number <code>4242 4242 4242 4242</code> with any future date and CVC.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+                    <h5>Order Confirmed</h5>
+                    <p>After a successful payment you will be redirected to the order confirmation page showing your unique order number and a summary of your purchase. A confirmation is also sent to your registered email address.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── Dragon Ball History ────────────────────────────────────── -->
+    <section class="mb-5">
+        <h2 class="section-title">The Legend of Dragon Ball</h2>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+
+                <div class="about-card mb-4">
+                    <div class="history-label">
+                        <i class="fas fa-book-open me-2"></i>Manga Origins (1984)
+                    </div>
+                    <p>
+                        Dragon Ball was created by the legendary manga artist <strong>Akira Toriyama</strong> and first serialised
+                        in Weekly Shonen Jump magazine in Japan in November 1984. Inspired loosely by the classic Chinese novel
+                        <em>Journey to the West</em>, the story followed a young boy named <strong>Son Goku</strong> on a
+                        globe-trotting adventure to collect seven magical orbs known as the Dragon Balls, each granting a wish
+                        when gathered together. Toriyama's distinctive art style, sharp humour, and inventive world-building
+                        immediately resonated with readers, and the manga quickly became one of the best-selling series in the
+                        history of Weekly Shonen Jump.
+                    </p>
+                    <p>
+                        As the series progressed into its second arc — later known internationally as <strong>Dragon Ball Z</strong>
+                        — the tone shifted from light adventure to intense martial arts battles. Goku, now an adult, faced ever more
+                        powerful foes including the Saiyan warriors Raditz and Vegeta, the galactic tyrant Frieza, the bio-android
+                        Cell, and the magical Majin Buu. These arcs introduced iconic transformations such as the Super Saiyan
+                        form, which became one of the most recognisable moments in anime history. The manga ran until 1995,
+                        comprising 519 chapters collected into 42 volumes, and remains one of the best-selling manga series
+                        of all time with over 260 million copies sold worldwide.
+                    </p>
+                </div>
+
+                <div class="about-card mb-4">
+                    <div class="history-label">
+                        <i class="fas fa-tv me-2"></i>Anime Adaptations (1986 – Present)
+                    </div>
+                    <p>
+                        The anime adaptation of Dragon Ball began in 1986, produced by <strong>Toei Animation</strong>. The
+                        original Dragon Ball series ran for 153 episodes before transitioning into Dragon Ball Z in 1989, which
+                        ran for a further 291 episodes and became a global phenomenon when it was dubbed and broadcast across
+                        North America, Europe, Latin America, and beyond through the 1990s and early 2000s. For millions of
+                        children and teenagers around the world, Dragon Ball Z was their first introduction to anime as a medium,
+                        and its influence on popular culture — from memes and catchphrases to fitness culture and fashion — is
+                        still felt today.
+                    </p>
+                    <p>
+                        The franchise continued with <strong>Dragon Ball GT</strong> (1996), a non-canonical sequel, and was
+                        revived in full force with <strong>Dragon Ball Super</strong> (2015), which brought back Toriyama as
+                        story supervisor and introduced new concepts such as multiple universes, Gods of Destruction, and the
+                        Ultra Instinct transformation. Most recently, <strong>Dragon Ball Super: Super Hero</strong> (2022)
+                        and the ongoing <strong>Dragon Ball Daima</strong> series (2024) have continued to expand the universe,
+                        proving that nearly four decades after its creation, Dragon Ball remains one of the most beloved and
+                        commercially powerful franchises in entertainment.
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <div class="history-label">
+                        <i class="fas fa-layer-group me-2"></i>Dragon Ball Trading Cards
+                    </div>
+                    <p>
+                        The Dragon Ball trading card game has a history almost as long as the anime itself. The first officially
+                        licensed Dragon Ball card games appeared in Japan in the late 1980s and early 1990s, produced by
+                        <strong>Bandai</strong>, who have remained the primary card game publisher for the franchise ever since.
+                        Early card sets were primarily collectible rather than competitive, featuring character artwork and scene
+                        illustrations from the anime, and were wildly popular among children during the height of Dragon Ball Z's
+                        broadcast in the 1990s. Cards from this era — particularly those featuring Goku, Vegeta, and the Super
+                        Saiyan transformation — are now highly sought after by collectors and can command significant prices
+                        in the secondary market.
+                    </p>
+                    <p>
+                        The modern era of Dragon Ball cards is dominated by the <strong>Dragon Ball Super Card Game</strong>,
+                        launched by Bandai in 2017 to coincide with the Dragon Ball Super anime series. This fully competitive
+                        trading card game introduced structured deck-building, tournament play, and a tiered rarity system
+                        ranging from Common and Uncommon cards through to Rare, Super Rare, Special Rare, and the highly prized
+                        Secret Rare cards. Booster sets are released regularly, each themed around a story arc or new series,
+                        and the game has an active global tournament scene. Parallel foil variants, alternate art cards, and
+                        limited promotional cards have created a thriving collector community alongside the competitive player base,
+                        making Dragon Ball one of the most exciting trading card universes to collect today.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+{% endblock %}

@@ -52,7 +52,7 @@
                         <a class="nav-link {% if active_page == 'cards' %}active{% endif %}" href="/cards/">Cards</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link {% if active_page == 'about' %}active{% endif %}" href="{% url 'about' %}">About</a>
                     </li>
                 </ul>
                 
@@ -99,7 +99,7 @@
                     <ul class="list-unstyled">
                         <li><a href="/">Home</a></li>
                         <li><a href="/cards/">Cards</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="/about/">About</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
