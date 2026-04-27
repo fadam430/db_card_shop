@@ -33,7 +33,7 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['db-card-shop-5ba6aba51d41.herokuapp.com/', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['db-card-shop-5ba6aba51d41.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
