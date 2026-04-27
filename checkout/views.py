@@ -3,6 +3,10 @@ from django.shortcuts import render, redirect, reverse
 from .forms import OrderForm
 from bag.models import Bag
 
+tripe.api_key = settings.STRIPE_SECRET_KEY
+
+STRIPE_PUBLIC_KEY = settings.STRIPE_PUBLIC_KEY
+
 def checkout(request):
     try:
         bag = request.user.bag
