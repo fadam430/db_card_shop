@@ -12,7 +12,10 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 import os
 from pathlib import Path
-import env  # ← Import env.py to load environment variables
+import dj_database_url
+if os.path.isfile('env.py'):
+     from env import *  # ← Import env.py to load environment variables
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -30,7 +33,7 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['db-card-shop-5ba6aba51d41.herokuapp.com/', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -131,6 +134,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 
 # Password validation

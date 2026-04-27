@@ -1,0 +1,1 @@
+web: gunicorn db_cardshop.wsgi:application
