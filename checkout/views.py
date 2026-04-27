@@ -2,14 +2,15 @@ from django.contrib import messages
 from django.shortcuts import render, redirect, reverse
 from .forms import OrderForm
 from bag.models import Bag
+from django.conf import settings
+import stripe
 
-tripe.api_key = settings.STRIPE_SECRET_KEY
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
-STRIPE_PUBLIC_KEY = settings.STRIPE_PUBLIC_KEY
 
 def checkout(request):
     try:
-        bag = request.user.bag
+        bag = request.user.bags.first()
         bag_items = bag.items.all()
     except Exception:
         messages.error(request, "Your bag is empty.")
