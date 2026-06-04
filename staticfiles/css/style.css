@@ -1,0 +1,500 @@
+/* =============================================
+   Dragon Ball Card Shop - Custom CSS
+   ============================================= */
+
+/* ===== Root Variables ===== */
+:root {
+    --db-orange: #FF6B35;
+    --db-blue: #004E89;
+    --db-dark: #1a1a1a;
+    --db-light: #f8f9fa;
+    --db-gold: #FFD700;
+    --db-red: #D32F2F;
+    --font-saiyan: 'Saiyan', sans-serif;
+    --font-bangers: 'Bangers', cursive;
+}
+
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--db-light);
+    color: var(--db-dark);
+    line-height: 1.6;
+}
+
+/* ===== Header with Logo Background ===== */
+.db-header {
+    background: linear-gradient(135deg, var(--db-blue) 0%, var(--db-orange) 100%);
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.db-header-bg {
+    position: relative;
+    text-align: center;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.db-logo-bg {
+    max-width: 150px;
+    height: auto;
+    opacity: 0.9;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ===== Navigation Bar ===== */
+.db-navbar {
+    background: linear-gradient(90deg, var(--db-blue) 0%, var(--db-dark) 100%) !important;
+    padding: 1rem 0 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border-bottom: 3px solid var(--db-gold);
+}
+
+.db-brand {
+    font-family: var(--font-saiyan);
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--db-gold) !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease;
+}
+
+.db-brand:hover {
+    transform: scale(1.05);
+    color: var(--db-orange) !important;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 15px;
+    position: relative;
+    color: #fff !important;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--db-gold) !important;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: var(--db-gold);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+/* ===== Navbar Icons (Right Side) ===== */
+.navbar-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-icon:hover {
+    
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.icon-img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+/* ===== Mobile Responsive - Navbar ===== */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        margin-top: 15px;
+        border-top: 2px solid var(--db-gold);
+        padding-top: 15px;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px 0;
+        margin: 5px 0;
+        border-left: 3px solid transparent;
+        padding-left: 15px;
+    }
+
+    .navbar-nav .nav-link:hover {
+        border-left-color: var(--db-gold);
+        background-color: rgba(255, 215, 0, 0.1);
+    }
+
+    .navbar-icons {
+        justify-content: flex-start;
+        margin-left: 0;
+        margin-top: 15px;
+        border-top: 2px solid var(--db-gold);
+        padding-top: 15px;
+    }
+
+    .db-brand {
+        font-size: 1.4rem;
+    }
+}
+
+/* ===== Main Content ===== */
+.main-content {
+    min-height: calc(100vh - 400px);
+    padding: 60px 0;
+}
+
+/* ===== Hero Section (Home Page) ===== */
+.hero-section {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.9) 0%, rgba(0, 78, 137, 0.9) 100%),
+                url('https://via.placeholder.com/1200x400') center/cover;
+    color: white;
+    padding: 120px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.hero-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    font-family: var(--font-bangers);
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    animation: slideInDown 0.8s ease;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    animation: slideInUp 0.8s ease;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Button Styles ===== */
+.btn-db-primary {
+    background-color: var(--db-orange);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-db-primary:hover {
+    background-color: var(--db-red);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(211, 47, 47, 0.4);
+    color: white;
+}
+
+.btn-db-secondary {
+    background-color: var(--db-blue);
+    color: white;
+    border: 2px solid var(--db-blue);
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-db-secondary:hover {
+    background-color: transparent;
+    color: var(--db-blue);
+    transform: translateY(-2px);
+}
+
+/* ===== Card Styles ===== */
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    height: 450px;
+    
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-weight: 700;
+    color: var(--db-blue);
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* ===== Footer ===== */
+.db-footer {
+    background: linear-gradient(90deg, var(--db-dark) 0%, var(--db-blue) 100%);
+    color: white;
+    padding: 50px 0 20px;
+    margin-top: auto;
+}
+
+.db-footer h5 {
+    font-family: var(--font-saiyan);
+    color: var(--db-gold);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.db-footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.db-footer a:hover {
+    color: var(--db-gold);
+}
+
+.db-footer p {
+    margin: 10px 0;
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--db-blue);
+}
+
+a {
+    color: var(--db-orange);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--db-red);
+}
+
+/* ===== Utility Classes ===== */
+.text-db-primary {
+    color: var(--db-orange);
+}
+
+.text-db-secondary {
+    color: var(--db-blue);
+}
+
+.bg-db-light {
+    background-color: var(--db-light);
+}
+
+.section-title {
+    font-family: var(--font-bangers);
+    font-size: 2.5rem;
+    color: var(--db-blue);
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--db-orange);
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .main-content {
+        padding: 40px 0;
+        min-height: calc(100vh - 350px);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 80px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-section p {
+        font-size: 0.95rem;
+    }
+
+    .db-brand {
+        font-size: 1.1rem;
+    }
+
+    .navbar-icons {
+        gap: 10px;
+    }
+
+    .nav-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .icon-img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* ===== Card Image Responsive Heights ===== */
+.card-img-responsive {
+    height: 400px;
+    
+}
+
+/* Tablet and Desktop - 450px */
+@media (min-width: 768px) {
+    .card-img-responsive {
+        height: 450px;
+        
+    }
+}
+
+/* ===== Smooth Scrolling ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--db-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--db-orange);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--db-red);
+}

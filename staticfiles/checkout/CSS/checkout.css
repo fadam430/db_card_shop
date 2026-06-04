@@ -1,0 +1,223 @@
+/* =============================================
+   Dragon Ball Card Shop - Checkout CSS
+   ============================================= */
+
+/* ===== Fieldset & Legend ===== */
+fieldset {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+legend {
+    font-family: 'Bangers', cursive;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    color: #004E89;
+    background-color: #fff;
+    width: auto;
+    float: none;
+    padding: 0 10px;
+}
+
+/* ===== Form Inputs ===== */
+.stripe-style-input,
+.stripe-style-input:focus {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    color: #1a1a1a;
+    background-color: #fff;
+    box-shadow: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stripe-style-input:focus {
+    border-color: #FF6B35;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
+    outline: none;
+}
+
+/* ===== Stripe Card Element ===== */
+#card-element {
+    background-color: #fff;
+    padding: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    height: 48px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#card-element.StripeElement--focus {
+    border-color: #FF6B35;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
+}
+
+#card-element.StripeElement--invalid {
+    border-color: #D32F2F;
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.15);
+}
+
+#card-errors {
+    font-size: 0.875rem;
+    color: #D32F2F;
+    min-height: 20px;
+}
+
+/* ===== Order Summary List ===== */
+.list-group-item {
+    border-left: none;
+    border-right: none;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+}
+
+.list-group-item:first-child {
+    border-top: none;
+    border-radius: 10px 10px 0 0;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+    border-radius: 0 0 10px 10px;
+    background-color: #f8f9fa;
+    font-size: 1.05rem;
+}
+
+.list-group-item h6 {
+    color: #004E89;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+/* ===== Buttons ===== */
+.btn-black {
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 2px solid #1a1a1a;
+    padding: 10px 24px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.btn-black:hover {
+    background-color: #FF6B35;
+    border-color: #FF6B35;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+}
+
+.btn-outline-black {
+    background-color: transparent;
+    color: #1a1a1a;
+    border: 2px solid #1a1a1a;
+    padding: 10px 24px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.btn-outline-black:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Submit Button Area ===== */
+.submit-button {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.submit-button .small {
+    width: 100%;
+    margin-top: 6px !important;
+}
+
+/* ===== Charge Warning ===== */
+.submit-button p.small {
+    color: #D32F2F;
+    font-size: 0.82rem;
+}
+
+/* ===== Page Headings ===== */
+.container h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    color: #FF6B35;
+}
+
+.container h2.h4 {
+    font-family: 'Bangers', cursive;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    color: #004E89;
+    border-bottom: 3px solid #FFD700;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+/* ===== Loading Overlay (for when payment processes) ===== */
+#loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 26, 26, 0.85);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #FFD700;
+    font-family: 'Bangers', cursive;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+#loading-overlay.active {
+    display: flex;
+}
+
+#loading-overlay .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    color: #FF6B35;
+    margin-bottom: 16px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .container h1 {
+        font-size: 2rem;
+    }
+
+    fieldset {
+        padding: 14px;
+    }
+
+    .submit-button {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-black,
+    .btn-outline-black {
+        width: 100%;
+        text-align: center;
+    }
+}
