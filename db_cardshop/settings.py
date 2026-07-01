@@ -116,11 +116,11 @@ AWS_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storage.StaticStorage'
 DEFAULT_FILE_STORAGE = 'custom_storage.MediaStorage'
-MEDIAFILES_LOCATION = 'media'
+MEDIA_FILES_LOCATION = 'media'
 
 # Override static and media URLs to use S3
 STATIC_URL = f'https://{AWS_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-MEDIA_URL = f'https://{AWS_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+MEDIA_URL = f'https://{AWS_CUSTOM_DOMAIN}/{MEDIA_FILES_LOCATION}/'
 
 # Local static files for development
 STATICFILES_DIRS = [BASE_DIR / 'static']
