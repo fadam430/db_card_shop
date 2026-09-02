@@ -6,4 +6,4 @@ from .models import Card
 def card_list(request):
     """Display all cards in a mobile-first grid"""
     cards = Card.objects.all()
-    return render(request, 'templates/cards/card_list.html', {'cards': cards, 'active_page': 'cards'})
+    return render(request, 'cards/card_list.html', {'cards': cards, 'active_page': 'cards'})
