@@ -123,7 +123,7 @@ STATIC_URL = f'https://{AWS_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
 MEDIA_URL = f'https://{AWS_CUSTOM_DOMAIN}/{MEDIA_FILES_LOCATION}/'
 
 # Local static files for development
-STATICFILES_DIRS = BASE_DIR / 'static'
+STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_ROOT = BASE_DIR / 'media'
 
