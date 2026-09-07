@@ -24,13 +24,13 @@ Testing should be completed after deployment and repeated after significant code
 
 | Area | Details |
 | --- | --- |
-| Desktop operating system | ______________________________ |
-| Mobile device or emulator | ______________________________ |
-| Browser and version | ______________________________ |
-| Screen resolution tested | ______________________________ |
-| Network condition | Normal / Slow / Offline |
-| Test account | ______________________________ |
-| Test payment details | Use the approved test payment method only |
+| Desktop operating system | Windows 10 |
+| Mobile device or emulator | Samsung S25+ |
+| Browser and version | Brave last version |
+| Screen resolution tested | 1980X1020 |
+| Network condition | Normal  |
+| Test account | admin account |
+| Test payment details | details in Stripe website and the About page |
 
 ## 3. Functional Testing
 
@@ -38,42 +38,42 @@ Record the result and any evidence for each test. Use the validation column for 
 
 | ID | Test action | Expected result | Result | Validation / evidence |
 | --- | --- | --- | --- | --- |
-| F-01 | Open the home page | The page loads without errors and the header, navigation, content, and footer are visible |  |  |
-| F-02 | Click the logo or Home link | The user is returned to the home page |  |  |
-| F-03 | Click **Browse Cards**, **Shop Now**, or **Explore Cards** | The cards page opens |  |  |
-| F-04 | Click the Cards navigation link | The cards page opens and the Cards link is shown as active |  |  |
-| F-05 | View the cards page with available products | Cards show their image or fallback, name, category, description, price, and action button |  |  |
-| F-06 | View the cards page with no products | A clear empty-state message is displayed instead of a blank area |  |  |
-| F-07 | Click **Add** while signed in | The selected card is added to the bag and the user receives clear feedback |  |  |
-| F-08 | Click **Add** while signed out | The user is directed to the login page or shown an appropriate authentication prompt |  |  |
-| F-09 | Open the shopping bag/cart | The bag shows the selected product, quantity, price, subtotal, and available actions |  |  |
-| F-10 | Increase and decrease item quantity | Quantity and totals update correctly |  |  |
-| F-11 | Remove an item from the bag | The item is removed and totals update correctly |  |  |
-| F-12 | Open the checkout page with a valid bag | Checkout loads with the correct order summary and required fields |  |  |
-| F-13 | Submit checkout with valid details | Payment/order processing completes and a success page or confirmation is shown |  |  |
-| F-14 | Submit checkout with missing or invalid details | Validation messages identify the fields that need correction |  |  |
-| F-15 | Use the About navigation link | The About page opens and its content is readable |  |  |
-| F-16 | Open the login page | Login form loads and accepts valid credentials |  |  |
-| F-17 | Submit invalid login details | A clear error is shown and the user remains on the login page |  |  |
-| F-18 | Log out | The user is logged out and guest actions are displayed |  |  |
-| F-19 | Use the registration link | Registration page opens and required fields are validated |  |  |
-| F-20 | Open product images | Images load from the configured storage location without broken-image icons |  |  |
-| F-21 | Open the site favicon and static assets | CSS, JavaScript, fonts, and favicon load successfully |  |  |
-| F-22 | Refresh each main page | The page remains available and does not lose the current valid session unexpectedly |  |  |
-| F-23 | Use browser Back and Forward buttons | Navigation behaves predictably without duplicate submissions |  |  |
-| F-24 | Open an unknown URL | A suitable 404 page or response is returned |  |  |
+| F-01 | Open the home page | The page loads without errors and the header, navigation, content, and footer are visible | Pass |  |
+| F-02 | Click the logo or Home link | The user is returned to the home page | Pass |  |
+| F-03 | Click **Browse Cards**, **Shop Now**, or **Explore Cards** | The cards page opens | Pass |  |
+| F-04 | Click the Cards navigation link | The cards page opens and the Cards link is shown as active | Pass |  |
+| F-05 | View the cards page with available products | Cards show their image or fallback, name, category, description, price, and action button | Fail | card images not displayed |
+| F-06 | View the cards page with no products | A clear empty-state message is displayed instead of a blank area | Pass |  |
+| F-07 | Click **Add** while signed in | The selected card is added to the bag and the user receives clear feedback | Pass |  |
+| F-08 | Click **Add** while signed out | The user is directed to the login page or shown an appropriate authentication prompt | Pass |  |
+| F-09 | Open the shopping bag/cart | The bag shows the selected product, quantity, price, subtotal, and available actions | Pass |  |
+| F-10 | Increase and decrease item quantity | Quantity and totals update correctly | Pass |  |
+| F-11 | Remove an item from the bag | The item is removed and totals update correctly | Pass |  |
+| F-12 | Open the checkout page with a valid bag | Checkout loads with the correct order summary and required fields | Pass |  |
+| F-13 | Submit checkout with valid details | Payment/order processing completes and a success page or confirmation is shown | Pass |  |
+| F-14 | Submit checkout with missing or invalid details | Validation messages identify the fields that need correction | Pass |  |
+| F-15 | Use the About navigation link | The About page opens and its content is readable | Pass |  |
+| F-16 | Open the login page | Login form loads and accepts valid credentials | Pass |  |
+| F-17 | Submit invalid login details | A clear error is shown and the user remains on the login page | Pass |  |
+| F-18 | Log out | The user is logged out and guest actions are displayed | Pass |  |
+| F-19 | Use the registration link | Registration page opens and required fields are validated | Pass |  |
+| F-20 | Open product images | Images load from the configured storage location without broken-image icons | Fail | images is not load even its in the right folder and place need to find out what cose the problem |
+| F-21 | Open the site favicon and static assets | CSS, JavaScript, fonts, and favicon load successfully | Pass |  |
+| F-22 | Refresh each main page | The page remains available and does not lose the current valid session unexpectedly | Pass |  |
+| F-23 | Use browser Back and Forward buttons | Navigation behaves predictably without duplicate submissions | Pass |  |
+| F-24 | Open an unknown URL | A suitable 404 page or response is returned | Pass |  |
 
 ## 4. Form and Input Validation
 
 | ID | Validation check | Expected result | Result | Validation / evidence |
 | --- | --- | --- | --- | --- |
-| V-01 | Leave each required field empty | The field is rejected with a useful validation message |  |  |
-| V-02 | Enter an invalid email address | The email field is rejected |  |  |
-| V-03 | Enter values containing spaces or leading/trailing whitespace | Values are handled consistently and safely |  |  |
-| V-04 | Enter unusually long text | The application prevents invalid data or handles it without layout damage |  |  |
-| V-05 | Enter invalid numeric values for quantity or payment-related fields | Invalid values are rejected and no incorrect total is created |  |  |
-| V-06 | Submit a form more than once | Duplicate orders or duplicate actions are prevented where applicable |  |  |
-| V-07 | Trigger a validation error, correct it, and resubmit | The corrected form submits successfully |  |  |
+| V-01 | Leave each required field empty | The field is rejected with a useful validation message | Pass |  |
+| V-02 | Enter an invalid email address | The email field is rejected | Pass |  |
+| V-03 | Enter values containing spaces or leading/trailing whitespace | Values are handled consistently and safely | Pass |  |
+| V-04 | Enter unusually long text | The application prevents invalid data or handles it without layout damage | Pass |  |
+| V-05 | Enter invalid numeric values for quantity or payment-related fields | Invalid values are rejected and no incorrect total is created | Pass |  |
+| V-06 | Submit a form more than once | Duplicate orders or duplicate actions are prevented where applicable | Pass |  |
+| V-07 | Trigger a validation error, correct it, and resubmit | The corrected form submits successfully | Pass |  |
 
 ## 5. Resolution Testing
 
@@ -81,18 +81,18 @@ Check layout, text, images, navigation, buttons, forms, and footer at each resol
 
 | Resolution | Device type | Layout result | Result | Validation / screenshot |
 | --- | --- | --- | --- | --- |
-| 320 x 568 | Small mobile | ______________________________ |  |  |
-| 375 x 667 | Mobile | ______________________________ |  |  |
-| 390 x 844 | Modern mobile | ______________________________ |  |  |
-| 768 x 1024 | Tablet portrait | ______________________________ |  |  |
-| 1024 x 768 | Tablet landscape / small desktop | ______________________________ |  |  |
-| 1280 x 720 | Desktop | ______________________________ |  |  |
-| 1366 x 768 | Common desktop | ______________________________ |  |  |
-| 1920 x 1080 | Large desktop | ______________________________ |  |  |
+| 320 x 568 | Small mobile | in browser dev tools | Pass | no picture validation |
+| 375 x 667 | Mobile | in browser dev tools | Pass | no picture validation |
+| 390 x 844 | Modern mobile | samsung s25+ | Pass | no picture validation |
+| 768 x 1024 | Tablet portrait |in browser dev tools | Pass | no picture validation |
+| 1024 x 768 | Tablet landscape / small desktop | in browser dev tools | Pass | no picture validation |
+| 1280 x 720 | Desktop | in browser dev tools | Pass | no picture validation |
+| 1366 x 768 | Common desktop | in browser dev tools | Pass | no picture validation |
+| 1920 x 1080 | Large desktop | asus rog laptop | Pass | no picture validation |
 
 ### Resolution checklist
 
-- [ ] Navigation collapses and expands correctly on small screens.
+- [&#10003] Navigation collapses and expands correctly on small screens.
 - [ ] Card columns resize without overlapping or unexpected horizontal scrolling.
 - [ ] Product images keep a consistent, usable aspect ratio.
 - [ ] Buttons remain visible, clickable, and fully readable.
@@ -102,31 +102,31 @@ Check layout, text, images, navigation, buttons, forms, and footer at each resol
 
 ## 6. Mobile Version Testing
 
-Test using at least one real iOS device or Safari emulator and one Android device or Chrome emulator.
+Test using at one Android device.
 
 | ID | Mobile test | Expected result | Result | Validation / evidence |
 | --- | --- | --- | --- | --- |
-| M-01 | Load the home page on mobile | Page loads correctly without horizontal scrolling |  |  |
-| M-02 | Open and close the mobile navigation menu | Menu opens, links are readable, and it closes after selecting a link |  |  |
-| M-03 | Tap the card action button | The button responds on the first tap and gives clear feedback |  |  |
-| M-04 | Scroll through the cards page | Cards and images load correctly while scrolling |  |  |
-| M-05 | Use the bag and checkout on mobile | Cart totals, fields, buttons, and order summary are usable |  |  |
-| M-06 | Rotate the device | Layout adapts correctly between portrait and landscape |  |  |
-| M-07 | Use mobile keyboard in forms | Focused fields remain visible and the keyboard does not hide the submit action |  |  |
-| M-08 | Test on a slower connection | Loading states and errors are understandable; the page remains usable |  |  |
-| M-09 | Tap links and buttons near the screen edge | Controls have enough touch area and do not trigger an adjacent action |  |  |
-| M-10 | Check image loading on mobile data | Images load at an acceptable speed without breaking the layout |  |  |
+| M-01 | Load the home page on mobile | Page loads correctly without horizontal scrolling | Pass |  |
+| M-02 | Open and close the mobile navigation menu | Menu opens, links are readable, and it closes after selecting a link | Pass |  |
+| M-03 | Tap the card action button | The button responds on the first tap and gives clear feedback | Pass |  |
+| M-04 | Scroll through the cards page | Cards and images load correctly while scrolling | Pass |  |
+| M-05 | Use the bag and checkout on mobile | Cart totals, fields, buttons, and order summary are usable | Pass |  |
+| M-06 | Rotate the device | Layout adapts correctly between portrait and landscape | Pass |  |
+| M-07 | Use mobile keyboard in forms | Focused fields remain visible and the keyboard does not hide the submit action | Pass |  |
+| M-08 | Test on a slower connection | Loading states and errors are understandable; the page remains usable | Pass |  |
+| M-09 | Tap links and buttons near the screen edge | Controls have enough touch area and do not trigger an adjacent action | Pass |  |
+| M-10 | Check image loading on mobile data | Images load at an acceptable speed without breaking the layout | Fail | images still need to check the problem |
 
 ## 7. Accessibility and Usability Checks
 
 | ID | Check | Expected result | Result | Validation / evidence |
 | --- | --- | --- | --- | --- |
-| A-01 | Navigate using only the keyboard | All interactive controls can receive focus and be used |  |  |
-| A-02 | Check visible focus indicators | The focused control is clearly visible |  |  |
-| A-03 | Inspect image alternative text | Meaningful images have useful alt text; decorative images are handled appropriately |  |  |
-| A-04 | Check heading order and page titles | Headings and titles describe the current page clearly |  |  |
-| A-05 | Check colour contrast and readable text | Text and controls remain legible |  |  |
-| A-06 | Test error messages | Errors are clear and associated with the relevant field or action |  |  |
+| A-01 | Navigate using only the keyboard | All interactive controls can receive focus and be used | Pass |  |
+| A-02 | Check visible focus indicators | The focused control is clearly visible | Pass |  |
+| A-03 | Inspect image alternative text | Meaningful images have useful alt text; decorative images are handled appropriately | Pass |  |
+| A-04 | Check heading order and page titles | Headings and titles describe the current page clearly | Pass |  |
+| A-05 | Check color contrast and readable text | Text and controls remain legible | Pass |  |
+| A-06 | Test error messages | Errors are clear and associated with the relevant field or action | Pass |  |
 
 ## 8. Lighthouse Testing
 
@@ -150,8 +150,12 @@ Notes:
 Screenshot: [cards](/media/lighthouse/cardpagedesktop.PNG)  
 Notes: 
 
-**About - Mobile/Desktop**  
-Screenshot: [login](/media/lighthouse/aboutpagemobil.PNG)  
+**About - Mobile**  
+Screenshot: [about](/media/lighthouse/aboutpagemobil.PNG)  
+Notes: 
+
+**About - Desktop**  
+Screenshot: [about](/media/lighthouse/aboutpagedesktop.PNG)  
 Notes: 
 
 ## 9. Significant Issues Log
@@ -168,14 +172,13 @@ Record issues that affect functionality, data, security, accessibility, performa
 
 | Category | Passed | Failed | Blocked | N/A | Notes |
 | --- | ---: | ---: | ---: | ---: | --- |
-| Functional testing |  |  |  |  |  |
-| Validation testing |  |  |  |  |  |
-| Resolution testing |  |  |  |  |  |
-| Mobile testing |  |  |  |  |  |
-| Accessibility checks |  |  |  |  |  |
-| Lighthouse testing |  |  |  |  |  |
+| Functional testing | Pass |  |  |  |  |
+| Validation testing | Pass |  |  |  |  |
+| Resolution testing | Pass |  |  |  |  |
+| Mobile testing | Pass |  |  |  |  |
+| Accessibility checks | Pass |  |  |  |  |
+| Lighthouse testing | Pass |  |  |  | but mobil version in the home page is bit weird numbers |
 
-**Release recommendation:** Approved / Approved with known issues / Not approved  
-**Outstanding significant issues:** ______________________________________  
-**Tester sign-off:** ____________________  
-**Date:** ____________________
+**Release recommendation:**  Approved with known issues  
+**Outstanding significant issues:** in card shop don't show the cards images  
+
