@@ -7,10 +7,9 @@ This document records manual testing for the Dragon Ball Card Shop website. It c
 Testing should be completed after deployment and repeated after significant code or configuration changes.
 
 **Overall test status:** Not started  
-**Test date:** ____________________  
-**Tester:** ____________________  
-**Application URL:** ____________________  
-**Release/version:** ____________________
+**Test date:** 05/09/2026  
+**Tester:** Adam Foldesi  
+**Release/version:** 1.0
 
 ### Result key
 
@@ -131,40 +130,29 @@ Test using at least one real iOS device or Safari emulator and one Android devic
 
 ## 8. Lighthouse Testing
 
-Run Lighthouse in an incognito window with extensions disabled. Test the home page, cards page, and checkout page where possible. Record the date, device mode, and scores.
-
-| Page | Mode | Performance | Accessibility | Best Practices | SEO | Date |
-| --- | --- | ---: | ---: | ---: | ---: | --- |
-| Home | Mobile |  |  |  |  |  |
-| Home | Desktop |  |  |  |  |  |
-| Cards | Mobile |  |  |  |  |  |
-| Cards | Desktop |  |  |  |  |  |
-| Checkout | Mobile |  |  |  |  |  |
-| Checkout | Desktop |  |  |  |  |  |
 
 ### Lighthouse screenshots
 
 Add screenshots or links to the reports below. Include the URL and date for each capture.
 
 **Home - Mobile**  
-Screenshot: ____________________________________________________________  
-Notes: _________________________________________________________________
-
+Screenshot: [home](/media/lighthouse/homapagemobile.PNG)  
+Notes: Mobile lighthouse has a very bad score. I don't know it the website problem or was something bad in the lighthouse. Other pages not get this bed score.
 **Home - Desktop**  
-Screenshot: ____________________________________________________________  
-Notes: _________________________________________________________________
+Screenshot: [home](/media/lighthouse/homapagedesktop.PNG) 
+Notes: This get better score than mobile version. This page its still has problem some javascript loading and picture loading problem.
 
 **Cards - Mobile**  
-Screenshot: ____________________________________________________________  
-Notes: _________________________________________________________________
+Screenshot: [cards](/media/lighthouse/cardpagemobile.PNG)  
+Notes: 
 
 **Cards - Desktop**  
-Screenshot: ____________________________________________________________  
-Notes: _________________________________________________________________
+Screenshot: [cards](/media/lighthouse/cardpagedesktop.PNG)  
+Notes: 
 
-**Checkout - Mobile/Desktop**  
-Screenshot: ____________________________________________________________  
-Notes: _________________________________________________________________
+**About - Mobile/Desktop**  
+Screenshot: [login](/media/lighthouse/aboutpagemobil.PNG)  
+Notes: 
 
 ## 9. Significant Issues Log
 

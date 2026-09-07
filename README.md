@@ -92,14 +92,14 @@ the catalogue and from the catalogue to the shopping bag.
 
 ### Wireframe
 
-    - Home [Link](/media/wireframes/wireframe_02_Home.pdf)
-    - Card List [Link](/media/wireframes/wireframe_03_Cards_List.pdf)
-    - Card Detail [Link](/media/wireframes/wireframe_04_Card_Detail.pdf)
-    - Shopping bag [Link](/media/wireframes/wireframe_05_Shopping_Bag.pdf)
-    - Checkout [Link](/media/wireframes/wireframe_06_Checkout.pdf)
-    - Checkout Success [Link](/media/wireframes/wireframe_07_Checkout_Success.pdf)
-    - Login [Link](/media/wireframes/wireframe_08_Login.pdf)
-    - Signup [Link](/media/wireframes/wireframe_09_Signup.pdf)
+- Home [Link](/media/wireframes/wireframe_02_Home.pdf)
+- Card List [Link](/media/wireframes/wireframe_03_Cards_List.pdf)
+- Card Detail [Link](/media/wireframes/wireframe_04_Card_Detail.pdf)
+- Shopping bag [Link](/media/wireframes/wireframe_05_Shopping_Bag.pdf)
+- Checkout [Link](/media/wireframes/wireframe_06_Checkout.pdf)
+- Checkout Success [Link](/media/wireframes/wireframe_07_Checkout_Success.pdf)
+- Login [Link](/media/wireframes/wireframe_08_Login.pdf)
+- Signup [Link](/media/wireframes/wireframe_09_Signup.pdf)
 
 
 ## Surface
@@ -257,7 +257,7 @@ This project was deployed to Heroku via the following steps:
 
 ## Media
 - All images downloaded this website.
-- Images [Link](https://mnacardz.com/)
+- Images [here](https://mnacardz.com/)
 
 ## Code
 - Django Documentation: https://docs.djangoproject.com/

@@ -54,7 +54,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link {% if active_page == 'home' %}active{% endif %}" aria-current="{% if active_page == 'home' %}page{% endif %}" href="/">Home</a>
+                        <a class="nav-link {% if active_page == 'home' %}active{% endif %}"{% if active_page == 'home' %} aria-current="page"{% endif %} href="/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if active_page == 'cards' %}active{% endif %}" href="/cards/">Cards</a>
