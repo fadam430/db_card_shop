@@ -92,7 +92,7 @@ Check layout, text, images, navigation, buttons, forms, and footer at each resol
 
 ### Resolution checklist
 
-- [&#10003] Navigation collapses and expands correctly on small screens.
+- [ ] Navigation collapses and expands correctly on small screens.
 - [ ] Card columns resize without overlapping or unexpected horizontal scrolling.
 - [ ] Product images keep a consistent, usable aspect ratio.
 - [ ] Buttons remain visible, clickable, and fully readable.
@@ -144,29 +144,28 @@ Notes: This get better score than mobile version. This page its still has proble
 
 **Cards - Mobile**  
 Screenshot: [cards](/media/lighthouse/cardpagemobile.PNG)  
-Notes: 
+Notes: no extra comment here card size right 
 
 **Cards - Desktop**  
 Screenshot: [cards](/media/lighthouse/cardpagedesktop.PNG)  
-Notes: 
+Notes: cards and animations of the working images not shown. 
 
 **About - Mobile**  
 Screenshot: [about](/media/lighthouse/aboutpagemobil.PNG)  
-Notes: 
+Notes: this working well no any issues this page 
 
 **About - Desktop**  
 Screenshot: [about](/media/lighthouse/aboutpagedesktop.PNG)  
-Notes: 
+Notes: no any issues
 
 ## 9. Significant Issues Log
 
-Record issues that affect functionality, data, security, accessibility, performance, or the customer journey. Prioritise issues before release.
+Record issues that affect functionality, data, security, accessibility, performance, or the customer journey. Priorities issues before release.
 
-| Issue ID | Date | Test ID | Description and steps to reproduce | Severity | Expected / actual result | Status | Screenshot or reference |
+| Issue  | Date | Test | Description and steps to reproduce | Severity | Expected / actual result | Status | Screenshot or reference |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-|  |  |  |  | Critical / High / Medium / Low |  | Open / Fixed / Retest |  |
-|  |  |  |  | Critical / High / Medium / Low |  | Open / Fixed / Retest |  |
-|  |  |  |  | Critical / High / Medium / Low |  | Open / Fixed / Retest |  |
+| no images shown in card shop page | 07/09/2026 | open the page and no images shown | I try to change name of the folder where is the files. I checked the aws s3 bucket images shown there as well. Somehow in he website is not shown. | Critical |  | Open  | no screenshot needed |
+
 
 ## 10. Final Test Summary
 
